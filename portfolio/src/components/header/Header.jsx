@@ -46,14 +46,15 @@ export const Header = () => {
         <nav>
             <ul>
                 <li><a href="%#">Home</a></li>
-                <li><a href="%#">Home</a></li>
-                <li><a href="%#">Home</a></li>
+                <li><a href="%#">About</a></li>
+                <li><a href="%#">Work</a></li>
+                <li><a href="%#">Contact</a></li>
             </ul>
         </nav>
         <div className="socials">
-            <BsLinkedin className='medias'/>
-            <BsGithub className='medias'/>
-            <BsInstagram className='medias'/>
+            <a href="#"><BsLinkedin className='medias'/></a>
+            <a href="#"><BsGithub className='medias'/></a>
+            <a href="#"><BsInstagram className='medias'/></a>
         </div>
     </TagHeader>
   )

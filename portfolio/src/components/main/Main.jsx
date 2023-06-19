@@ -44,19 +44,39 @@ export const TagMain = styled.main`
     .btn button{
         color: #474306;
         background-color: #F5EE84;
-        padding: 16px 39px 15px 39px;
-        border-radius: 10px;
-        outline: none;
-        border: none;
-        transition: .4s ease-in;
-        cursor:pointer;
+        font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 16px 37px 15px 35px;
+  border-radius: 10px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
         font-weight: 600;
     }
-    .btn button:hover{
-        background-color: yellow;
-        color: black;
-    }
-   
+    .btn button:after {
+  content: "";
+  background-color: #F5EE84;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.btn button:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
     .right{
         display: flex;
         align-items: center;
