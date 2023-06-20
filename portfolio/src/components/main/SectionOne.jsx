@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Typewriter } from 'react-simple-typewriter'
 
 export const TagMain = styled.main`
     display: flex;
@@ -16,6 +17,8 @@ export const TagMain = styled.main`
         justify-content: center;
         flex-direction: column;
         margin-right: 7.37rem;
+        width: 616px;
+        max-width: 100%;
     }
     .left h4{
         font-size: 28px;
@@ -117,7 +120,17 @@ export const SectionOne = () => {
     <TagMain>
         <div className="left">
             <h4 className='ola'>Olá, eu sou o Henrique,</h4>
-            <h1>Developer <br /> Front-End</h1>
+            <h1>
+            <Typewriter
+            words={['Developer Front-End']}
+            loop={1}
+            cursor
+            cursorStyle='|'
+            typeSpeed={120}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+            </h1>
             <h4 className='dev'>desenvolvedor do Brasil.</h4>
             <div className="btn">
                 <button>Resume</button>

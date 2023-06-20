@@ -23,7 +23,7 @@ export const SectionContainer = styled.div`
         font-size: 24px;
         line-height: 44px;
         color: #03045E;
-        width: 900px;
+        width: 1200px;
         max-width: 100%;
     }
 `
