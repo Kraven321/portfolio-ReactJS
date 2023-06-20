@@ -97,7 +97,7 @@ export const TagMain = styled.main`
     box-shadow: 0 0 15px rgba(0, 0, 0, .2);
     animation: blob 3.7s linear infinite;
     -webkit-box-shadow: 0px 0px 1px 12px #474306; 
-box-shadow: 0px 0px 1px 12px #474306;
+box-shadow: 0px 0px 1px 8px #474306;
 }
 @keyframes blob{
     0%, 100%{

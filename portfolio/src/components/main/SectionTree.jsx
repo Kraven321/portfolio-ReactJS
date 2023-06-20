@@ -40,10 +40,38 @@ export const WorkImage = styled.div`
     flex-wrap: wrap;
 
     .square{
-        width: 560px;
+        width: 500px;
         height: 400px;
         background-color: yellow;
     }
+
+    .content-img{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        h3{
+            margin-top: 44px;
+            color: #03045E;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 44px;
+            width: 215px;
+            max-width: 100%;
+        }
+
+        p{
+            margin-top: 2px;
+            color: #03045E;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 32px;
+            width: 500px;
+            max-width: 100%;
+        }
+    }
+    
 `
 
 const SectionTree = () => {
@@ -54,8 +82,16 @@ const SectionTree = () => {
     <p>Confira abaixo, alguns dos meus trabalhos pessoais que desenvolvi para por em prática meus conhecimentos em desenvolvimento Front-End.</p>
    </WorkContainer>
    <WorkImage>
+    <div className="content-img">
       <div className='square'></div>
+      <h3>Titulo projeto</h3>
+      <p>Lorem ipsum num sei oque num sei oque</p>
+      </div>
+      <div className="content-img">
       <div className='square'></div>
+      <h3>Titulo projeto</h3>
+      <p>Lorem ipsum num sei oque num sei oque</p>
+      </div>
       </WorkImage>
    </>
   )
