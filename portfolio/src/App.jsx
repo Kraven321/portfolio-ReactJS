@@ -1,14 +1,18 @@
 
 import './App.css'
 import { Header } from './components/header/Header'
-import { Main } from './components/main/Main'
+import { SectionOne } from './components/main/SectionOne'
+import SectionTree from './components/main/SectionTree'
+import SectionTwo from './components/main/SectionTwo'
 
 function App() {
  
   return (
     <div>
    <Header/>
-   <Main/>
+   <SectionOne/>
+   <SectionTwo/>
+   <SectionTree/>
    </div>
   )
 }

@@ -5,7 +5,9 @@ export const TagMain = styled.main`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 150px;
+    padding-top: 191px;
+    padding-right: 103px;
+    padding-left: 97px;
     flex-wrap: wrap;
 
     .left{
@@ -110,7 +112,7 @@ box-shadow: 0px 0px 1px 12px #474306;
 }
 `
 
-export const Main = () => {
+export const SectionOne = () => {
   return (
     <TagMain>
         <div className="left">
