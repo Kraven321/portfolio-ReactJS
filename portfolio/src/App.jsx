@@ -11,10 +11,18 @@ function App() {
   return (
     <div>
    <Header/>
+   <div  id='home' >
    <SectionOne/>
+   </div>
+   <div id='about' >
    <SectionTwo/>
+   </div>
+   <div id='work'>
    <SectionTree/>
+   </div>
+   <div id='contact'>
    <SectionFour/>
+   </div>
    </div>
   )
 }

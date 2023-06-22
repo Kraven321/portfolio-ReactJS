@@ -77,7 +77,7 @@ export const WorkImage = styled.div`
 const SectionTree = () => {
   return (
     <>
-   <WorkContainer>
+   <WorkContainer >
     <h1>Work.</h1>
     <p>Confira abaixo, alguns dos meus trabalhos pessoais que desenvolvi para por em prática meus conhecimentos em desenvolvimento Front-End.</p>
    </WorkContainer>

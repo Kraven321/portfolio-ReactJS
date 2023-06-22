@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { BsLinkedin, BsGithub, BsInstagram } from 'react-icons/bs';
+import {links} from '../../data'
 
 const TagHeader = styled.header`
+
   position: fixed;
   top: 0;
   left: 0;
@@ -32,23 +34,37 @@ const TagHeader = styled.header`
     font-size: 18px;
     font-weight: 400;
     line-height: 27px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
+    position: relative;
   }
-nav ul li a::after{
+
+  nav ul li a::after {
     content: '';
     display: block;
     width: 0;
     height: 2px;
     background: #000;
-    transition: width .3s;
-}
-nav ul li a:hover::after{
-    width: 100%;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+  }
 
-}
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+
   nav ul li a:hover {
     color: black;
   }
+  nav ul li.selected.active a::after{
+  width: 100%;
+}
+nav ul li.selected.active a,
+nav ul li.selected.active a:hover {
+  color: black;
+  width: 100%;
+}
 
   .socials {
     display: flex;
@@ -59,37 +75,48 @@ nav ul li a:hover::after{
     color: #03045e;
     width: 26px;
     height: 20px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
+
   .socials .medias:hover {
     color: black;
   }
-  .socials a::after{
+
+  .socials a::after {
     content: '';
     display: block;
     width: 0;
     height: 2px;
     background: #000;
-    transition: width .3s;
+    transition: width 0.3s;
   }
-  .socials a:hover::after{
+
+  .socials a:hover::after {
     width: 100%;
   }
 `;
 
 const scrolledStyle = {
-  backgroundColor: '#F0F4F8', // Tom de gelo
-  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', // Suavidade
+  backgroundColor: '#F0F4F8',
+  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
 };
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [selectedLink, setSelectedLink] = useState(1);
+ 
+  
+  
+  
+  
 
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 0;
       setScrolled(isScrolled);
     };
+
+   
 
     window.addEventListener('scroll', handleScroll);
 
@@ -98,23 +125,22 @@ export const Header = () => {
     };
   }, []);
 
+
   return (
     <TagHeader style={scrolled ? scrolledStyle : {}} scrolled={scrolled}>
       <h2>Henrique Reis</h2>
       <nav>
         <ul>
-          <li>
-            <a href="%#">Home</a>
+          {links.map((link) => (
+            <li
+            key={link.id}
+            className={`${link.id === selectedLink ? 'selected active' : ''}`}
+          >
+            <a href={link.url} onClick={() => setSelectedLink(link.id)}>
+              {link.text}
+            </a>
           </li>
-          <li>
-            <a href="%#">About</a>
-          </li>
-          <li>
-            <a href="%#">Work</a>
-          </li>
-          <li>
-            <a href="%#">Contact</a>
-          </li>
+          ))}
         </ul>
       </nav>
       <div className="socials">

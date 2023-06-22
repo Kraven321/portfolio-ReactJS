@@ -12,3 +12,6 @@ body{
   width: 100%;
   background-color: #FBF8CC;
 }
+html{
+  scroll-behavior: smooth;
+}

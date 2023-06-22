@@ -117,7 +117,7 @@ box-shadow: 0px 0px 1px 8px #474306;
 
 export const SectionOne = () => {
   return (
-    <TagMain>
+    <TagMain >
         <div className="left">
             <h4 className='ola'>Olá, eu sou o Henrique,</h4>
             <h1>
