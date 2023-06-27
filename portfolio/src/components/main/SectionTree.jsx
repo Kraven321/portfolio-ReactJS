@@ -42,7 +42,20 @@ export const WorkImage = styled.div`
     .square{
         width: 500px;
         height: 400px;
-        background-color: yellow;
+        background: url(../../../public/images/screen-nike.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border: 12px solid yellow;
+    }
+    .square2{
+        width: 500px;
+        height: 400px;
+        background: url(../../../public/images/screen-ps5.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 12px solid yellow;
     }
 
     .content-img{
@@ -84,13 +97,13 @@ const SectionTree = () => {
    <WorkImage>
     <div className="content-img">
       <div className='square'></div>
-      <h3>Titulo projeto</h3>
-      <p>Lorem ipsum num sei oque num sei oque</p>
+      <h3>NIKE ANIMATION</h3>
+      <p>Animação feita com CSS puro, utilizando @keyframes. Projeto ficou muito parecido com uma propraganda de televisão!</p>
       </div>
       <div className="content-img">
-      <div className='square'></div>
-      <h3>Titulo projeto</h3>
-      <p>Lorem ipsum num sei oque num sei oque</p>
+      <div className='square2'></div>
+      <h3>PS5 PAGE</h3>
+      <p>Projeto no qual tive a oportunidade de treinar HTML e CSS, e aprender mais sobre "Position Absolute" e "Position Relative" que está muito presente nessa aplicação.</p>
       </div>
       </WorkImage>
    </>

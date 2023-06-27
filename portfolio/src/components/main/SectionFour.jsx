@@ -20,10 +20,14 @@ export const SectionContact = styled.div`
     font-size: 100px;
     line-height: 116px;
   }
-  .square{
-    background-color: yellow;
-    width: 400px;
-    height: 300px;
+  .square3{
+        width: 500px;
+        height: 400px;
+        background: url(../../../public/images/contact.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border: 12px solid yellow;
   }
   .wrapper{
     display: flex;
@@ -60,14 +64,14 @@ export const SectionFour = () => {
     <SectionContact>
       <h1>Contact.</h1>
       <div className="wrapper">
-        <div className='square'></div>
+        <div className='square3'></div>
         <div className="paragrafo">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet vulputate tristique quam felis. Id phasellus dui orci vulputate consequat nulla proin. Id sit scelerisque neque, proin bibendum diam.</p>
-          <a href="#">github.com/Kraven321</a>
-          <a href="#">instagram.com/henriquereissz</a>
-          <a href="#">linkedin.com/henriquereis</a>
+          <p>Para entrar em contato comigo, você pode utilizar os seguintes links:.</p>
+          <a href="https://github.com/Kraven321">github.com/Kraven321</a>
+          <a href="https://www.instagram.com/henriquereissz/">instagram.com/henriquereissz</a>
+          <a href="https://www.linkedin.com/in/henrique-reis-b1a2a520b/">linkedin.com/henriquereis</a>
         </div>
       </div>
-        </SectionContact>
+    </SectionContact>
   )
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { BsLinkedin, BsGithub, BsInstagram } from 'react-icons/bs';
-import {links} from '../../data'
+import { links } from '../../data'
 
 const TagHeader = styled.header`
 
@@ -101,14 +101,13 @@ const scrolledStyle = {
   boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
 };
 
-//quero que os links do meu header mudem dinamicamente conforme eu dou scroll na aplicação
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [selectedLink, setSelectedLink] = useState(1);
   const [attlinkheader, setAttLinkHeader] = useState(false);
-  
-  
+
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -119,7 +118,7 @@ export const Header = () => {
       setAttLinkHeader(scrollPosition > 0);
     };
 
-   
+
 
     window.addEventListener('scroll', handleScroll);
 
@@ -129,8 +128,8 @@ export const Header = () => {
   }, []);
 
   const getActiveLinkId = (scrollPosition) => {
-    let activeLinkId = 1;
-    const scrollMargin = 70; 
+    let activeLinkId = null;
+    const scrollMargin = 70;
     for (const link of links) {
       const targetElement = document.querySelector(link.url);
       if (targetElement) {
@@ -163,13 +162,13 @@ export const Header = () => {
         </ul>
       </nav>
       <div className="socials">
-        <a href="#">
+        <a href="https://www.linkedin.com/in/henrique-reis-b1a2a520b/" target="_blank">
           <BsLinkedin className="medias" />
         </a>
-        <a href="#">
+        <a href="https://github.com/Kraven321" target="_blank">
           <BsGithub className="medias" />
         </a>
-        <a href="#">
+        <a href="https://www.instagram.com/henriquereissz/" target="_blank">
           <BsInstagram className="medias" />
         </a>
       </div>
