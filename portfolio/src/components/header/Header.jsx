@@ -101,12 +101,12 @@ const scrolledStyle = {
   boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
 };
 
+//quero que os links do meu header mudem dinamicamente conforme eu dou scroll na aplicação
+
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [selectedLink, setSelectedLink] = useState(1);
- 
-  
-  
+  const [attlinkheader, setAttLinkHeader] = useState(false);
   
   
 
@@ -114,6 +114,9 @@ export const Header = () => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 0;
       setScrolled(isScrolled);
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      setSelectedLink(getActiveLinkId(scrollPosition));
+      setAttLinkHeader(scrollPosition > 0);
     };
 
    
@@ -125,6 +128,24 @@ export const Header = () => {
     };
   }, []);
 
+  const getActiveLinkId = (scrollPosition) => {
+    let activeLinkId = 1;
+    const scrollMargin = 70; 
+    for (const link of links) {
+      const targetElement = document.querySelector(link.url);
+      if (targetElement) {
+        const targetPosition = targetElement.offsetTop;
+        const targetHeight = targetElement.offsetHeight;
+        if (scrollPosition >= targetPosition + scrollMargin && scrollPosition < targetPosition + targetHeight) {
+          activeLinkId = link.id;
+          break;
+        }
+      }
+    }
+    return activeLinkId;
+  };
+
+
 
   return (
     <TagHeader style={scrolled ? scrolledStyle : {}} scrolled={scrolled}>
@@ -133,13 +154,11 @@ export const Header = () => {
         <ul>
           {links.map((link) => (
             <li
-            key={link.id}
-            className={`${link.id === selectedLink ? 'selected active' : ''}`}
-          >
-            <a href={link.url} onClick={() => setSelectedLink(link.id)}>
-              {link.text}
-            </a>
-          </li>
+              key={link.id}
+              className={`${link.id === selectedLink ? 'selected active' : ''}`}
+            >
+              <a href={link.url}>{link.text}</a>
+            </li>
           ))}
         </ul>
       </nav>
@@ -157,3 +176,5 @@ export const Header = () => {
     </TagHeader>
   );
 };
+
+export default Header;
