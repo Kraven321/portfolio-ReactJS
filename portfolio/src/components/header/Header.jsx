@@ -147,7 +147,7 @@ export const Header = () => {
 
 
   return (
-    <TagHeader style={scrolled ? scrolledStyle : {}} scrolled={scrolled}>
+    <TagHeader style={scrolled ? scrolledStyle : {}} scrolled={scrolled.toString()}>
       <h2>Henrique Reis</h2>
       <nav>
         <ul>
